@@ -1,7 +1,6 @@
-import Image from "next/image";
-import Hero from "./components/Hero";
-import Sticky2 from "./components/Sticky2";
-import Sticky from "./components/Sticky";
+import Hero from "../components/Hero";
+import Sticky2 from "../components/Sticky2";
+import Sticky from "../components/Sticky";
 
 
 export default function Home() {
