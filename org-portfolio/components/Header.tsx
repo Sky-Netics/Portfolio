@@ -73,7 +73,7 @@ export const Header: React.FC= () =>{
                         onMouseLeave={() => setHover(null)}
                     >
                         <a href="">{item.title}</a>
-                        <div className="w-0 h-px bg-gray-400 transition-all duration-500 group-hover:w-full"></div>
+                        <div className="h-px w-full bg-gray-400 transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100 group-hover:origin-left origin-right"/>
                     </li>
                 ))}
             </ul>
@@ -85,11 +85,11 @@ export const Header: React.FC= () =>{
             <div className="flex items-center gap-x-6">
                 <div className="relative group space-y-0.5 hidden lg:block">
                     <a href="">newsroom</a>
-                    <div className="w-0 h-px bg-gray-400 transition-all duration-500 group-hover:w-full"></div>
+                    <span className="absolute left-0 bottom-0 h-px w-full bg-gray-400 transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100 group-hover:origin-left origin-right"/>
                 </div>
                 <div className="relative group space-y-0.5 hidden lg:block">
                     <a href="">careers</a>
-                    <div className="w-0 h-px bg-gray-400 transition-all duration-500 group-hover:w-full"></div>
+                    <span className="absolute left-0 bottom-0 h-px w-full bg-gray-400 transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100 group-hover:origin-left origin-right"/>
                 </div>
                 <IoSearchSharp className="text-2xl cursor-pointer"/>
             </div>
