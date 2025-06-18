@@ -71,15 +71,15 @@ export const ScrollSpyNav: React.FC<Props> = ({ sections }) => {
           className="relative group flex items-center"
           variants={{
             hidden: { opacity: 0, y: 20 },
-            visible: { opacity: 1, y: 0 },
+            visible: { opacity: 0.8, y: 0 },
           }}
         >
           <button
             onClick={() => handleClick(id)}
-            className={`w-2 h-2 md:w-3 md:h-3 rounded-full border-2 transition-all duration-200 ${
+            className={`w-2 h-2 md:w-3 md:h-3 lg:w-5 lg:h-5 rounded-full border-3 bg-black  transition-all duration-500 ${
               activeId === id
-                ? "bg-blue-600 border-white scale-135 shadow-md"
-                : "border-white"
+                ? "bg-blue-600 border-slate-200 scale-145 shadow-lg"
+                : "border-gray-100"
             }`}
           />
           <AnimatePresence>
@@ -89,7 +89,7 @@ export const ScrollSpyNav: React.FC<Props> = ({ sections }) => {
                 initial={{ opacity: 0, x: 10 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 10 }}
-                className=" absolute right-4 md:right-6 px-2 py-1 text-sm font-medium bg-white text-blue-700 rounded  shadow whitespace-nowrap "
+                className=" absolute right-4 md:right-6 px-2 py-1 text-sm lg:text-xl xl:right-8 font-medium mx-1 bg-white text-blue-700 rounded  shadow whitespace-nowrap "
               >
                 {label}
               </motion.span>
