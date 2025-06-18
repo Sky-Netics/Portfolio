@@ -1,5 +1,6 @@
 import "./globals.css"
 import type { Metadata } from "next"
+import { Footer } from "@/components/Footer"
 import { Header } from "../components/Header"
 import { Montserrat } from "next/font/google"
 
@@ -27,6 +28,7 @@ export default function RootLayout({
         <main className="max-w-[100rem] mx-auto">
           {children}
         </main>
+        <Footer/>
       </body>
     </html>
   )
