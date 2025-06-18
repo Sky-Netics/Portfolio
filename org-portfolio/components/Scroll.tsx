@@ -65,7 +65,7 @@ export default function Scroll() {
   }, [hasAnimated, characters.length])
   return (
     <>
-      <section className="bg-gradient-to-b from-blue-800 to-blue-900 pt-30">
+      <section id="scroll" className="bg-gradient-to-b from-blue-800 to-blue-900 pt-30">
         <div className="sticky inset-30 overflow-hidden text-9xl font-bold">
           <h5 className="text-white text-center text-xl">who we are</h5>
           <div

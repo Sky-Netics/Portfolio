@@ -2,7 +2,7 @@
 
 export default function DigitalSolutionsSection() {
   return (
-    <>
+    <section id="sticky2">
       <div className="sticky top-0 z-20 flex items-center justify-center h-[700px] bg-gray-50/80 backdrop-blur-2xl">
         <h1 className="text-3xl md:text-6xl font-bold text-slate-800 text-center transition-all duration-300">
           Front-end
@@ -136,6 +136,6 @@ export default function DigitalSolutionsSection() {
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 }

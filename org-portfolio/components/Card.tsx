@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { motion, AnimatePresence } from "framer-motion"
-import { useState, useEffect } from "react"
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
 
 const Card = () => {
   const cards = [
@@ -16,37 +16,40 @@ const Card = () => {
     {
       id: 2,
       title: "Sustainable Solutions",
-      description: "Discover our innovative approaches to sustainable energy production.",
+      description:
+        "Discover our innovative approaches to sustainable energy production.",
       cta: "Learn More",
       bgColor: "rgba(11,45,113,0.4)",
     },
     {
       id: 3,
       title: "Global Impact",
-      description: "See how we're making a difference in communities worldwide.",
+      description:
+        "See how we're making a difference in communities worldwide.",
       cta: "Our Projects",
       bgColor: "rgba(0,102,178,0.4)",
     },
     {
       id: 4,
       title: "Innovation Drive",
-      description: "See how we're making a difference in communities worldwide.",
+      description:
+        "See how we're making a difference in communities worldwide.",
       cta: "Our Projects",
       bgColor: "rgba(5,110,145,0.5)",
     },
-  ]
+  ];
 
-  const [activeIndex, setActiveIndex] = useState(0)
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % cards.length)
-    }, 5000)
-    return () => clearInterval(interval)
-  }, [cards.length])
+      setActiveIndex((prev) => (prev + 1) % cards.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [cards.length]);
 
   return (
-    <>
+    <section id="cards">
       <div className="absolute bottom-8 sm:bottom-6 md:bottom-16 left-1/2 -translate-x-1/2 z-10 w-full px-3 sm:px-4">
         <AnimatePresence mode="wait">
           <motion.div
@@ -73,7 +76,9 @@ const Card = () => {
                 aria-label={cards[activeIndex].cta}
               >
                 <span className="mr-1 sm:mr-2">{cards[activeIndex].cta}</span>
-                <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
+                <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
               </button>
             </div>
           </motion.div>
@@ -86,14 +91,16 @@ const Card = () => {
             key={index}
             onClick={() => setActiveIndex(index)}
             className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-400 touch-manipulation ${
-              activeIndex === index ? "w-3 sm:w-6 bg-white shadow-sm" : "bg-white/60 hover:bg-white/80"
+              activeIndex === index
+                ? "w-3 sm:w-6 bg-white shadow-sm"
+                : "bg-white/60 hover:bg-white/80"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
-    </>
-  )
-}
+    </section>
+  );
+};
 
-export default Card
+export default Card;
