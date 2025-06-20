@@ -62,7 +62,7 @@ export const Header: React.FC= () =>{
 
     return(
         <header
-            className="h-16 flex absolute top-0 w-full justify-between items-center z-10 text-sm text-white font-semibold px-6 2xl:px-40"
+            className="h-16 flex absolute top-0 w-full justify-between items-center z-30 text-sm text-white font-semibold px-6 2xl:px-40"
         >
             <ul className="items-center gap-x-6 hidden lg:flex">
                 {list.map((item, index) => (

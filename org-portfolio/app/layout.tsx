@@ -1,13 +1,13 @@
-import "./globals.css"
-import type { Metadata } from "next"
-import { Header } from "../components/Header"
-import { Montserrat } from "next/font/google"
-import ClientWrapper from "./ClientWrapper" 
+import "./globals.css";
+import type { Metadata } from "next";
+import { Header } from "../components/Header";
+import { Montserrat } from "next/font/google";
+import ClientWrapper from "./ClientWrapper";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
-  subsets: ["latin"]
-})
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Sky Netics",
@@ -17,14 +17,16 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body className={`scroll-smooth antialiased ${montserrat.variable}`}>
+      <body className={`scroll-smooth antialiased bg-gray-50/80 ${montserrat.variable}`}>
         <Header />
-        <ClientWrapper>{children}</ClientWrapper>
+        <main className="w-full">
+          <ClientWrapper>{children}</ClientWrapper>
+        </main>
       </body>
     </html>
-  )
+  );
 }

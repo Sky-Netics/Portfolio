@@ -1,8 +1,88 @@
 "use client";
 
-export default function BackendSolutionsSection() {
+import Image from "next/image";
+import { useState } from "react";
+import { ImPause } from "react-icons/im";
+
+const HeroSection: React.FC = () => {
+  const [isVideoPlaying, setIsVideoPlaying] = useState(true);
+
+  const toggleVideo = () => {
+    const videoElement = document.getElementById(
+      "hero-video"
+    ) as HTMLVideoElement | null;
+    if (videoElement) {
+      if (isVideoPlaying) {
+        videoElement.pause();
+      } else {
+        videoElement.play();
+      }
+      setIsVideoPlaying(!isVideoPlaying);
+    }
+  };
+
   return (
-    <>
+    <main className="">
+      <section id="about" className="relative overflow-hidden min-h-screen  ">
+        <div className=" w-full  ">
+          <video
+            id="hero-video"
+            className="  w-full object-cover h-dvh  bg-black   "
+            autoPlay
+            muted
+            playsInline
+            loop
+            aria-label="Background video"
+          >
+            <source
+              src="https://videos.ctfassets.net/oggad6svuzkv/3qRw7mV5YheBEgoCbNdjTU/04353ee9040c709b533ccb39ae8666d6/who-we-are-flip-compressed.mp4"
+              type="video/mp4"
+            />
+          </video>
+          <div className="absolute bottom-8 right-2 ">
+            <button
+              onClick={toggleVideo}
+              aria-label="Toggle Video"
+              className=" my-2 mx-2   bg-white rounded-full    shadow-md"
+            >
+              <span className="relative mx-auto my-auto">
+                <ImPause size={25} />
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <div className="w-full absolute bottom-10 md:bottom-15 p-8 md:w-1/2 text-center  md:text-left  space-y-4 ">
+          <div className="flex justify-center sm:justify-start md:justify-start">
+            <Image
+              src="//images.ctfassets.net/oggad6svuzkv/2WMNPzf7IPR1Vov5ZxVHtc/2952309fc5776587200c1c4b67d99daa/Read_Light_Blue.svg"
+              alt="Icon"
+              width={64}
+              height={64}
+              className="w-10 h-10 md:w-18 md:h-18"
+            />
+          </div>
+          <h1 className=" text-3xl  md:text-6xl lg:text-7xl pb- font-bold text-white">
+            Who we are<span className="text-[#02a1e2]">.</span>
+          </h1>
+          <p className="text-xs md:text-xl text-white ">
+            Making every day more than ordinary
+          </p>
+          <span className=" text-gray-100/60 text-sm ">
+            Our brands are trusted in millions of living rooms, kitchens,
+            laundry
+            <span className="hidden ">
+              rooms, and bathrooms—and have been passed down from generation to
+              generation. We are the people behind the brands you trust, and
+              we’re committed to making peoples’ lives better in small but
+              meaningful ways, every day.
+            </span>
+          </span>
+        </div>
+        <div className="w-full h-16  absolute -bottom-6 bg-black overflow-x-hidden overflow-y-hidden">
+          <div className="absolute  w-full   h-[100px] rounded-[70%]   bg-gray-50"></div>
+        </div>
+      </section>
       <section id="sticky1">
         <div className="sticky top-0 z-10 flex items-center justify-center h-[700px] bg-gray-50/80 backdrop-blur-2xl">
           <h1 className="text-3xl md:text-6xl font-bold text-slate-800 text-center transition-all duration-300">
@@ -11,7 +91,7 @@ export default function BackendSolutionsSection() {
         </div>
 
         <div className="relative z-30 mt-20">
-          <div className="bg-gradient-to-br from-emerald-900 to-teal-900 rounded-t-[5%] p-8 md:p-12 lg:p-16 min-h-[500px] md:min-h-[700px] shadow-2xl">
+          <div className="bg-gradient-to-br from-emerald-900 to-teal-900 rounded-t-2xl p-8 md:p-12 lg:p-16 min-h-[500px] md:min-h-[700px] shadow-2xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               <div className="space-y-6">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-emerald-300 leading-tight">
@@ -131,6 +211,8 @@ export default function BackendSolutionsSection() {
           </div>
         </div>
       </section>
-    </>
+    </main>
   );
-}
+};
+
+export default HeroSection;

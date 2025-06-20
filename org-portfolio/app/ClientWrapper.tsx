@@ -18,7 +18,7 @@ export default function ClientWrapper({ children }: { children: React.ReactNode 
   return (
     <>
       {showScrollSpy && <ScrollSpyNav sections={sections} />}
-      <main className="max-w-[100rem] mx-auto">{children}</main>
+      <main className=" mx-auto">{children}</main>
     </>
   )
 }

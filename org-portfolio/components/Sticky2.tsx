@@ -3,14 +3,14 @@
 export default function DigitalSolutionsSection() {
   return (
     <section id="sticky2">
-      <div className="sticky top-0 z-20 flex items-center justify-center h-[700px] bg-gray-50/80 backdrop-blur-2xl">
+      <div className="sticky top-0 z-10 flex items-center justify-center h-[700px] bg-gray-50/80 backdrop-blur-2xl">
         <h1 className="text-3xl md:text-6xl font-bold text-slate-800 text-center transition-all duration-300">
           Front-end
         </h1>
       </div>
 
-      <div className="relative z-30 mt-20 mb-40">
-        <div className="bg-slate-900 rounded-t-2xl p-8 md:p-12 lg:p-16 min-h-[500px] md:min-h-[700px] shadow-2xl">
+      <div className="relative z-30 mt-20">
+        <div className="bg-slate-900 rounded-t-[5%] p-8 md:p-12 lg:p-16 min-h-[500px] md:min-h-[700px] shadow-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-blue-400 leading-tight">
