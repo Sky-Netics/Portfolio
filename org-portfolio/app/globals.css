@@ -1,1 +1,6 @@
 @import "tailwindcss";
+@layer utilities {
+  .clip-ellipse {
+    clip-path: ellipse(118vw 100% at 50% 100%);
+  }
+}
