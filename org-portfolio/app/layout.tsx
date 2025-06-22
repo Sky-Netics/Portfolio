@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`scroll-smooth antialiased ${montserrat.variable}`}
+        className={`scroll-smooth antialiased bg-gray-50 ${montserrat.variable}`}
       >
         <Header/>
         <main className="max-w-[100rem] mx-auto">
