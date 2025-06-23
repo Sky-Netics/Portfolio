@@ -1,7 +1,7 @@
 "use client"
 
+import React from "react"
 import Image from "next/image"
-import { useState } from "react"
 import { IoMdClose } from "react-icons/io"
 import logo from "@/public/images/logo.png"
 import { FaArrowLeft } from "react-icons/fa6"
@@ -51,24 +51,37 @@ export const Header: React.FC= () =>{
         }
     ]
 
-    const [click, setClick] = useState<boolean>(false);
-    const [hover, setHover] = useState<{ title: string, content: string[] } | null>(null);
-    const [selectedItem, setSelectedItem] = useState<{ title: string, content: string[] } | null>(null);
+    const [click, setClick] = React.useState<boolean>(false);
+    const [scroll, setScroll] = React.useState<boolean>(false);
+    const [hover, setHover] = React.useState<{ title: string, content: string[] } | null>(null);
+    const [selectedItem, setSelectedItem] = React.useState<{ title: string, content: string[] } | null>(null);
 
     const close= () =>{
         setClick(false);
         setSelectedItem(null);
     }
 
+    React.useEffect(() =>{
+        const scrollHandler= () =>{
+          const isScrolled= window.scrollY> 60
+          if (isScrolled !== scroll) setScroll(isScrolled)
+        }
+
+        window.addEventListener("scroll", scrollHandler)
+        return () =>{
+          window.removeEventListener("scroll", scrollHandler)
+        }
+    }, [scroll])
+
     return(
         <header
-            className="h-16 flex absolute top-0 w-full justify-between items-center z-10 text-sm text-white font-semibold px-6 2xl:px-40"
+            className={`h-16 flex w-full justify-between items-center z-40 text-sm text-white font-semibold px-6 2xl:px-40 ${scroll ? "fixed bg-blue-900 shadow-md shadow-blue-500" : "absolute top-0"}`}
         >
             <ul className="items-center gap-x-6 hidden lg:flex">
                 {list.map((item, index) => (
                     <li
                         key={index}
-                        className="relative group space-y-0.5 z-20"
+                        className="relative group space-y-0.5 z-50"
                         onMouseEnter={() => setHover(item)}
                         onMouseLeave={() => setHover(null)}
                     >
