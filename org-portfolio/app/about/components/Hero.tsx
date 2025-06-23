@@ -77,7 +77,7 @@ const HeroSection = () => {
         </div>
 
         <div
-          className="block md:hidden relative z-10 bg-[#002d62] w-full text-white text-left px-6 py-8 space-y-4
+          className="block md:hidden relative z-10 bg-[#002d62] w-full text-white text-left mb-10 px-6 pb-20 py-8 space-y-4
           before:absolute before:-top-8 before:left-0 before:w-full before:h-8 before:bg-gradient-to-b before:from-transparent before:to-[#002d62]"
         >
           <div className="flex justify-start">
@@ -94,15 +94,15 @@ const HeroSection = () => {
           <p className="text-sm font-semibold">
             Making every day more than ordinary
           </p>
-          <p className="text-white/80 text-sm pb-5">
+          <p className="text-white/80 text-sm ">
             Our brands are trusted in millions of living rooms, kitchens,
             laundry rooms, and bathrooms—and have been passed down from
             generation to generation.
           </p>
         </div>
 
-        <div className="w-full h-16 relative overflow-visible z-20">
-          <div className="absolute bottom-6 w-full h-[100px] rounded-t-[70%] bg-gray-50"></div>
+        <div className="w-full h-2 md:h-16 relative overflow-visible z-20">
+          <div className="absolute bottom-0 w-full h-[110px] md:h-[140px] rounded-t-[70%] bg-gray-50"></div>
         </div>
       </section>
     </main>
