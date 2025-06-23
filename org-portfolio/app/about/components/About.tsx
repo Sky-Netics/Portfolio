@@ -4,7 +4,7 @@ import React from "react";
 
 const AboutUs = () => {
   return (
-    <section className="py-10 px-4 mt-10 space-y-10 w-5/6 md:w-3/7 mx-auto">
+    <section className="py-10 px-4 mt-10 space-y-10 w-5/6 md:w-3/7 mx-auto bg-gray-50 z-10 rounded-lg shadow-lg">
       <div className="space-y-4">
         <p className="text-gray-700 leading-relaxed text-sm text-center">
           As P&amp;G grows, we stay grounded in our{" "}
