@@ -14,7 +14,7 @@ const HeroSection: React.FC = () => {
 
 
   return (
-    <main>
+    <main >
       <Hero/>
       <About />
       <Logo />
