@@ -19,9 +19,8 @@ const GrowthTimeline: React.FC = () => {
   useEffect(() => {
     if (!containerRef.current) return;
 
-    const items = containerRef.current.querySelectorAll<HTMLDivElement>(
-      ".timeline-item"
-    );
+    const items =
+      containerRef.current.querySelectorAll<HTMLDivElement>(".timeline-item");
 
     const containerTop =
       containerRef.current.getBoundingClientRect().top + window.scrollY;
@@ -32,7 +31,8 @@ const GrowthTimeline: React.FC = () => {
     setCirclePositions(positions);
 
     if (nowRef.current) {
-      const nowTop = nowRef.current.getBoundingClientRect().top + window.scrollY;
+      const nowTop =
+        nowRef.current.getBoundingClientRect().top + window.scrollY;
       const solidLineH = nowTop - containerTop;
       setLineHeight(solidLineH);
 
@@ -42,11 +42,11 @@ const GrowthTimeline: React.FC = () => {
     // Animation setup
     const observerOptions = {
       threshold: 0.2,
-      rootMargin: "0px 0px -50px 0px"
+      rootMargin: "0px 0px -50px 0px",
     };
 
     const animateSection = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const target = entry.target as HTMLElement;
           target.classList.remove("opacity-0");
@@ -64,8 +64,10 @@ const GrowthTimeline: React.FC = () => {
     if (leftContainerRef.current) observer.observe(leftContainerRef.current);
 
     return () => {
-      if (rightContainerRef.current) observer.unobserve(rightContainerRef.current);
-      if (leftContainerRef.current) observer.unobserve(leftContainerRef.current);
+      if (rightContainerRef.current)
+        observer.unobserve(rightContainerRef.current);
+      if (leftContainerRef.current)
+        observer.unobserve(leftContainerRef.current);
     };
   }, []);
 
@@ -107,23 +109,14 @@ const GrowthTimeline: React.FC = () => {
           ))}
 
         <div className="max-w-5xl mx-auto space-y-10 relative z-10">
-          <h1 className="text-center mx-auto text-3xl md:text-6xl font-bold leading-relaxed bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+          <h1 className="text-center mx-auto text-3xl md:text-6xl font-bold leading-relaxed bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent animate-[riseUp_1s_ease-out]">
             Growth Timeline
           </h1>
         </div>
 
         <div className="relative z-10 space-y-20">
           <div className="timeline-item relative">
-            <div 
-              ref={rightContainerRef}
-              className="transition-all duration-700 ease-out opacity-0 translate-x-10"
-            >
-              <Right />
-            </div>
-          </div>
-
-          <div className="timeline-item relative">
-            <div 
+            <div
               ref={leftContainerRef}
               className="transition-all duration-700 ease-out opacity-0 -translate-x-10"
             >
@@ -139,8 +132,8 @@ const GrowthTimeline: React.FC = () => {
                     2<span className="text-gray-300">0</span>21
                   </h1>
                   <p className="text-sm max-w-5/6 my-5 text-end md:text-lg text-gray-700/90 leading-tight">
-                    Lorem ipsum dolor sit amet consectetur, atem adipisci inventore
-                    temporibus! Ad sed , ! , dicta voluptates?
+                    Lorem ipsum dolor sit amet consectetur, atem adipisci
+                    inventore temporibus! Ad sed , ! , dicta voluptates?
                   </p>
                 </div>
                 <div className="overflow-clip group shadow-2xl rounded-xl">
@@ -151,6 +144,15 @@ const GrowthTimeline: React.FC = () => {
                   />
                 </div>
               </div>
+            </div>
+          </div>
+
+          <div className="timeline-item relative">
+            <div
+              ref={rightContainerRef}
+              className="transition-all duration-700 ease-out opacity-0 translate-x-10"
+            >
+              <Right />
             </div>
           </div>
 
@@ -169,8 +171,8 @@ const GrowthTimeline: React.FC = () => {
                     2<span className="text-gray-300">0</span>24
                   </h1>
                   <p className="text-sm my-5 text-start max-w-5/6 md:text-lg text-gray-700/90 leading-tight">
-                    Lorem ipsum dolor sit amet consectetur, atem adipisci inventore
-                    temporibus! Ad sed , ! , dicta voluptates?
+                    Lorem ipsum dolor sit amet consectetur, atem adipisci
+                    inventore temporibus! Ad sed , ! , dicta voluptates?
                   </p>
                 </div>
               </div>
