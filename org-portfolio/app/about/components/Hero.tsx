@@ -40,8 +40,8 @@ const HeroSection = () => {
             />
           </video>
 
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-[#002d62]/80 to-transparent"></div>
-          <div className="absolute bottom-0 right-0 w-full h-auto bg-gradient-to-l from-[#002d62]/80 to-transparent"></div>
+          <div className="absolute bottom-0 right-0 w-full h-full bg-gradient-to-t from-[#002d62]/60 to-transparent"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-[#002d62]/20 to-transparent"></div>
 
           <div className="absolute bottom-8 right-2">
             <button
@@ -77,15 +77,16 @@ const HeroSection = () => {
         </div>
 
         <div
-          className="block md:hidden relative z-10 bg-[#002d62] w-full text-white text-left mb-10 px-6 pb-20 py-8 space-y-4
-          before:absolute before:-top-8 before:left-0 before:w-full before:h-8 before:bg-gradient-to-b before:from-transparent before:to-[#002d62]"
+          className="block md:hidden relative z-10 bg-[#002d62] w-full text-white text-left mb-10 px-6 pb-20 py-8 space-y-4 pt-0
+          before:absolute before:-top-18 before:left-0 before:w-full before:h-22 before:bg-gradient-to-b before:from-transparent before:to-[#002d62]"
         >
-          <div className="flex justify-start">
+          <div className="flex justify-start ">
             <Image
               src="//images.ctfassets.net/oggad6svuzkv/2WMNPzf7IPR1Vov5ZxVHtc/2952309fc5776587200c1c4b67d99daa/Read_Light_Blue.svg"
               alt="Icon"
               width={64}
               height={64}
+              className="z-30"
             />
           </div>
           <h1 className="text-3xl font-bold">

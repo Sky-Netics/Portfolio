@@ -4,3 +4,13 @@
     clip-path: ellipse(118vw 100% at 50% 100%);
   }
 }
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overscroll-behavior-y: contain;
+}
+
+
+
