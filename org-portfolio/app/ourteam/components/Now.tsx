@@ -25,7 +25,7 @@ const Now = () => {
 
   return (
     <div ref={containerRef} className="w-full space-y-10 px-10 my-15 ">
-      <h1 className="text-left text-3xl md:text-6xl font-bold">N<span className='text-gray-300'>O</span>W</h1>
+      <h1 className="text-left text-4xl md:text-8xl font-bold">N<span className='text-gray-300'>O</span>W</h1>
 
       <div
         className={`w-full max-w-3xl mx-auto space-y-6 transform transition-all duration-900 ease-[cubic-bezier(0.4,0,0.2,1)] 

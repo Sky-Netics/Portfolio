@@ -2,7 +2,7 @@
 
 import React, { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
-import p1 from "../../../public/images/slider/img1.jpg";
+import p1 from "../../../public/images/slider/img2.jpg";
 
 const Right = () => {
   const containerRef = useRef<HTMLDivElement>(null);

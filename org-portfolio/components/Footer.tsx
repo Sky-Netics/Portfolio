@@ -47,7 +47,7 @@ export const Footer: React.FC= () =>{
     ]
 
     return(
-        <footer className="bg-blue-800 clip-ellipse text-white px-4 lg:px-16 xl:px-32 pb-4 pt-12 space-y-12">
+        <footer className="bg-blue-800 relative z-40 clip-ellipse text-white px-4 lg:px-16 xl:px-32 pb-4 pt-12 space-y-12">
             <div className="flex justify-center">
                 <ScrollToTopButton/>
             </div>

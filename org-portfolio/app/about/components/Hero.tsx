@@ -40,9 +40,8 @@ const HeroSection = () => {
             />
           </video>
 
-          <div className="absolute bottom-0 right-0 w-full h-full bg-gradient-to-t from-[#002d62]/60 to-transparent"></div>
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-[#002d62]/20 to-transparent"></div>
-
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-[#002d62]/80 to-transparent"></div>
+          <div className="absolute bottom-0 right-0 w-full h-auto bg-gradient-to-l from-[#002d62]/80 to-transparent"></div>
           <div className="absolute bottom-8 right-2">
             <button
               onClick={toggleVideo}
