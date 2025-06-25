@@ -132,8 +132,9 @@ const GrowthTimeline: React.FC = () => {
                     2<span className="text-gray-300">0</span>21
                   </h1>
                   <p className="text-sm max-w-5/6 my-5 text-end md:text-lg text-gray-700/90 leading-tight">
-                    Lorem ipsum dolor sit amet consectetur, atem adipisci
-                    inventore temporibus! Ad sed , ! , dicta voluptates?
+                    In 2021, we embraced innovation and expanded our capabilities,
+                    laying the foundation for our current success. It was a year
+                    of strategic partnerships and significant milestones.
                   </p>
                 </div>
                 <div className="overflow-clip w-full h-auto group shadow-2xl rounded-xl">
@@ -171,8 +172,9 @@ const GrowthTimeline: React.FC = () => {
                     2<span className="text-gray-300">0</span>24
                   </h1>
                   <p className="text-sm my-5 text-start max-w-5/6 md:text-lg text-gray-700/90 leading-tight">
-                    Lorem ipsum dolor sit amet consectetur, atem adipisci
-                    inventore temporibus! Ad sed , ! , dicta voluptates?
+                    The year 2024 marks our transformation into a more agile and
+                    customer-centric organization. We’re focused on delivering
+                    excellence while nurturing our talented team.
                   </p>
                 </div>
               </div>
@@ -189,16 +191,3 @@ const GrowthTimeline: React.FC = () => {
 };
 
 export default GrowthTimeline;
-
-
-
-
-
-
-
-
-
-
-
-
-

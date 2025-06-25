@@ -47,8 +47,8 @@ const Now = () => {
           className={`text-center text-sm my-20 md:text-lg text-gray-700/80 max-w-xl mx-auto transition-all duration-1000 ease-in 
           ${isVisible ? 'opacity-100 translate-y-0 delay-300' : 'opacity-0 translate-y-20 delay-0'}`}
         >
-          We are still at the beginning of the path and we are very hopeful for
-          the future...
+                    We’re no longer just building a team — we’re shaping a culture. 2024 is a turning point filled with purpose, innovation, and people who believe in something bigger than themselves.
+
         </p>
       </div>
     </div>

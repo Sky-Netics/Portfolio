@@ -15,7 +15,7 @@ const Left = () => {
       },
       {
         threshold: 0.2,
-        rootMargin: '-50px 0px -50px 0px' 
+        rootMargin: '-50px 0px -50px 0px'
       }
     );
 
@@ -37,9 +37,8 @@ const Left = () => {
         `}>
           <Image
             src={p1}
-            alt="vh"
+            alt="Our founding team"
             sizes="(max-width: 768px) 100vw, 50vw"
-
             className="hover:scale-105 transition-all duration-500"
             priority
           />
@@ -60,8 +59,7 @@ const Left = () => {
             ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}
             ${isVisible ? 'delay-[300ms]' : 'delay-0'}
           `}>
-            Lorem ipsum dolor sit amet consectetur, atem adipisci inventore
-            temporibus! Ad sed , ! , dicta voluptates?
+            In 2020, our journey began with a shared vision: to build a team driven by innovation, collaboration, and a passion for creating impact.
           </p>
         </div>
       </div>
