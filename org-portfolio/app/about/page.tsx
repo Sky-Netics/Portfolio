@@ -11,11 +11,9 @@ import EmployeeStoriesSlider from "./components/EmployeeStoriesSlider";
 import Hero from "./components/Hero";
 
 const HeroSection: React.FC = () => {
-
-
   return (
-    <main >
-      <Hero/>
+    <>
+      <Hero />
       <About />
       <Logo />
       <EmployeeStories />
@@ -23,9 +21,8 @@ const HeroSection: React.FC = () => {
       <HeritageLeadership />
       <LatestEfforts />
       <KnowUsBetter />
-    </main>
+    </>
   );
 };
 
 export default HeroSection;
-
