@@ -1,3 +1,5 @@
+import { useId } from 'react';
+
 interface CurveDividerProps {
   height?: number
   topColor?: string
@@ -11,7 +13,7 @@ export default function CurveDivider({
   bottomColor = "#ffffff",
   inverted = false,
 }: CurveDividerProps) {
-  const gradientId = `curve-${Math.random().toString(36).substr(2, 9)}`
+  const gradientId = useId();
 
   return (
     <div className="w-full overflow-hidden" style={{ height: `${height}px` }}>
