@@ -2,8 +2,18 @@
 
 import Image, { StaticImageData } from "next/image";
 import React from "react";
-import defaultImg from "../public/images/marquee-3.png"; 
-import hoverImg from "../public/images/marquee-2.png"; 
+import imgAllInOneDefault from "../public/images/marquee-1.png";
+import imgAllInOneHover from "../public/images/marquee-2.png";
+import imgHabitomicDefault from "../public/images/marquee-3.png";
+import imgHabitomicHover from "../public/images/slider/img1.jpg";
+import imgDanaplusDefault from "../public/images/slider/img2.jpg";
+import imgDanaplusHover from "../public/images/slider/img3.jpg";
+import imgEasyFleetDefault from "../public/images/slider/img4.jpg";
+import imgEasyFleetHover from "../public/images/slider/img5.jpg";
+import imgTasteIranDefault from "../public/images/P_G.jpg";
+import imgTasteIranHover from "../public/images/logo.png";
+import imgPetroidmDefault from "../public/images/logoPng.png";
+import imgPetroidmHover from "../public/images/logo-png.png";
 
 type Project = {
   href: string;
@@ -17,91 +27,92 @@ type Project = {
 
 const projectsLeft: Project[] = [
   {
-    href: "/",
-    title: "all in one",
-    subtitle: "Android & iOS",
+    href: "/ecommerce-platform",
+    title: "E-Commerce Platform",
+    subtitle: "Next.js, Tailwind, Django",
     description: (
       <>
-        Your Personal <span className="text-white">AI Partner</span>. Comprehensive Health And Fitness Project
+        A scalable <span className="text-white">e-commerce solution</span> with blazing-fast frontend and robust backend, supporting thousands of products and real-time inventory.
       </>
     ),
-    defaultImage: defaultImg,
-    hoverImage: hoverImg,
-    imageAlt: "AI personal coach",
+    defaultImage: imgAllInOneDefault,
+    hoverImage: imgAllInOneHover,
+    imageAlt: "E-commerce web app",
   },
   {
-    href: "/habitomic",
-    title: "Habitomic",
-    subtitle: "Android & iOS",
+    href: "/saas-dashboard",
+    title: "SaaS Dashboard",
+    subtitle: "Next.js, Tailwind, Django REST",
     description: (
       <>
-        <span className="text-white">Pushing Yourself</span> Out of The Comfort Zone Is The Best Way To Achieve Your Goals!
+        <span className="text-white">Custom analytics dashboard</span> for SaaS businesses, featuring real-time data, user management, and beautiful UI.
       </>
     ),
-    defaultImage: defaultImg,
-    hoverImage: hoverImg,
-    imageAlt: "Adaptable habit tracker/builder",
+    defaultImage: imgHabitomicDefault,
+    hoverImage: imgHabitomicHover,
+    imageAlt: "SaaS dashboard",
   },
   {
-    href: "/Dana",
-    title: "Danaplus",
-    subtitle: "Android, iOS & Web",
+    href: "/portfolio-builder",
+    title: "Portfolio Site Builder",
+    subtitle: "Next.js, Tailwind",
     description: (
       <>
-        Comprehensive And Accessible <span className="text-white">E-Learning Platform</span> Worth Your Time And Effort.
+        <span className="text-white">No-code portfolio builder</span> for creative professionals, with drag-and-drop editing and instant deployment.
       </>
     ),
-    defaultImage: defaultImg,
-    hoverImage: hoverImg,
-    imageAlt: "Engaging e-learning platform",
+    defaultImage: imgDanaplusDefault,
+    hoverImage: imgDanaplusHover,
+    imageAlt: "Portfolio builder",
   },
 ];
 
 const projectsRight: Project[] = [
   {
-    href: "/EasyFleet",
-    title: "EasyFleet",
-    subtitle: "Android, iOS & Web",
+    href: "/api-integration",
+    title: "API Integration Suite",
+    subtitle: "Django, Python",
     description: (
       <>
-        Data-Driven Decisions For <span className="text-white">Fleet Management</span> Through The Precision of Numbers.
+        <span className="text-white">Seamless API integrations</span> for payment, shipping, and third-party services, built with Django and Python.
       </>
     ),
-    defaultImage: defaultImg,
-    hoverImage: hoverImg,
-    imageAlt: "Comprehensive fleet management",
+    defaultImage: imgEasyFleetDefault,
+    hoverImage: imgEasyFleetHover,
+    imageAlt: "API integration",
   },
   {
-    href: "/tasteIran",
-    title: "TasteIran",
-    subtitle: "Web",
+    href: "/analytics-dashboard",
+    title: "Real-Time Analytics",
+    subtitle: "Next.js, Django Channels",
     description: (
       <>
-        Listen To Untold Stories of <span className="text-white">Persia</span>, Taste Unforgettable Experiences of <span className="text-white">Iran</span>.
+        <span className="text-white">Live analytics dashboard</span> with WebSocket-powered updates and interactive charts.
       </>
     ),
-    defaultImage: defaultImg,
-    hoverImage: hoverImg,
-    imageAlt: "Authentic travel memories",
+    defaultImage: imgTasteIranDefault,
+    hoverImage: imgTasteIranHover,
+    imageAlt: "Real-time analytics",
   },
   {
-    href: "/Petroidm",
-    title: "Petroidm",
-    subtitle: "Web",
+    href: "/client-portal",
+    title: "Client Portal",
+    subtitle: "Next.js, Django",
     description: (
       <>
-        An Intelligent <span className="text-white">Data Management</span> Platform to Enhance Operational Performance in Oil Industry.
+        <span className="text-white">Secure client portal</span> for document sharing, messaging, and project tracking.
       </>
     ),
-    defaultImage: defaultImg,
-    hoverImage: hoverImg,
-    imageAlt: "Real-time oil drilling data management",
+    defaultImage: imgPetroidmDefault,
+    hoverImage: imgPetroidmHover,
+    imageAlt: "Client portal",
   },
 ];
 
 const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
   <a
     href={project.href}
+    aria-label={`View project: ${project.title} (${project.subtitle})`}
     className="space-y-4 flex flex-col justify-center items-center group cursor-pointer rounded-lg"
   >
     <div className="relative rounded-lg w-full max-w-[500px] h-[300px] group shadow-xl shadow-blue-600/20 overflow-clip group-hover:shadow-xl hover:scale-105 transition-all duration-900">
@@ -122,22 +133,11 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
         height={300}
       />
     </div>
-    <div className="text-[#A1A1A6] space-y-2 w-full max-w-[390px]">
-      <div className="flex items-center space-x-4">
+    <div className="text-[#A1A1A6] space-y-2 w-full max-w-[500px]">
+      <div className="flex flex-col items-start space-y-1">
         <h3 className="font-extrabold text-white text-2xl sm:text-xl md:text-3xl lg:text-2xl 2xl:text-4xl group-hover:text-blue-500/90 transition-all duration-300 cursor-pointer">
           {project.title}
         </h3>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="7"
-          height="7"
-          viewBox="0 0 8 8"
-          fill="none"
-          aria-hidden="true"
-          className="text-[#A1A1A6]"
-        >
-          <circle cx="4" cy="4" r="4" fill="#A1A1A6" />
-        </svg>
         <h4 className="text-xs sm:text-xs md:text-base xl:text-xl">{project.subtitle}</h4>
       </div>
       <p className="font-medium text-xs sm:text-xs md:text-base xl:text-xl">{project.description}</p>
