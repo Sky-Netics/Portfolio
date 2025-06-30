@@ -7,10 +7,10 @@ import logo1 from "../public/images/logo-transparent-png.png";
 import logo2 from "../public/images/logo-transparent-png2.png";
 
 const companies = [
-  { alt: "sky1", src: logo1 },
-  { alt: "sky11", src: logo2 },
-  { alt: "sku111", src: logo1 },
-  { alt: "sky1111", src: logo2 },
+  { alt: "Acme Corp", src: logo1 },
+  { alt: "SkyTech Solutions", src: logo2 },
+  { alt: "InnovateX", src: logo1 },
+  { alt: "NextGen Web", src: logo2 },
 ];
 
 const TrustedByCompanies: React.FC = () => {
@@ -23,7 +23,7 @@ const TrustedByCompanies: React.FC = () => {
           </h2>
         </header>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-5 items-center justify-center max-w-5/6 mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-5 items-center justify-center max-w-5xl mx-auto">
           {companies.map(({ alt, src }) => (
             <figure
               key={alt}
