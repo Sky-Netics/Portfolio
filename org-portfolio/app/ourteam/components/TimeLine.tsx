@@ -1,20 +1,16 @@
 "use client";
 
 import React, { useRef, useEffect, useState } from "react";
-import Image from "next/image";
-import Right from "./Right";
-import Left from "./Left";
 import Now from "./Now";
-import p1 from "../../../public/images/marquee-3.png";
+import { timelineData } from "./timelineData";
+import TimelineItem from "./TimelineItem";
 
-const GrowthTimeline: React.FC = () => {
+const TimeLine: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const nowRef = useRef<HTMLDivElement>(null);
   const [circlePositions, setCirclePositions] = useState<number[]>([]);
   const [lineHeight, setLineHeight] = useState(0);
   const [dottedLineTop, setDottedLineTop] = useState(0);
-  const rightContainerRef = useRef<HTMLDivElement>(null);
-  const leftContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -38,54 +34,23 @@ const GrowthTimeline: React.FC = () => {
 
       setDottedLineTop(solidLineH + nowRef.current.offsetHeight);
     }
-
-    // Animation setup
-    const observerOptions = {
-      threshold: 0.2,
-      rootMargin: "0px 0px -50px 0px",
-    };
-
-    const animateSection = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const target = entry.target as HTMLElement;
-          target.classList.remove("opacity-0");
-          target.classList.remove("translate-x-10");
-          target.classList.remove("-translate-x-10");
-          target.classList.add("opacity-100");
-          target.classList.add("translate-x-0");
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(animateSection, observerOptions);
-
-    if (rightContainerRef.current) observer.observe(rightContainerRef.current);
-    if (leftContainerRef.current) observer.observe(leftContainerRef.current);
-
-    return () => {
-      if (rightContainerRef.current)
-        observer.unobserve(rightContainerRef.current);
-      if (leftContainerRef.current)
-        observer.unobserve(leftContainerRef.current);
-    };
   }, []);
 
   return (
     <main className="w-full min-h-screen bg-white overflow-x-hidden">
       <section
         ref={containerRef}
-        className="md:w-5/6 mx-auto px-4 py-10 my-10 space-y-15 relative md:pl-[2rem]"
+        className="md:w-5/6 mx-auto px-4 py-10 my-10 space-y-16 relative md:pl-[2rem]"
       >
         <div
           aria-hidden="true"
-          className="hidden md:block absolute rounded-sm -left-22 bg-gradient-to-b from-blue-500 to-purple-600"
+          className="hidden md:block absolute rounded-sm -left-20 bg-gradient-to-b from-blue-500 to-purple-600"
           style={{ width: "2px", height: lineHeight, top: 0 }}
         />
 
         <div
           aria-hidden="true"
-          className="hidden md:block absolute -left-22 border-l border-dotted border-blue-500"
+          className="hidden md:block absolute -left-20 border-l border-dotted border-blue-500"
           style={{
             width: "64px",
             height: `calc(100% - ${dottedLineTop}px)`,
@@ -98,7 +63,7 @@ const GrowthTimeline: React.FC = () => {
             <span
               key={i}
               aria-hidden="true"
-              className="hidden md:block absolute -left-22 bg-white border-4 border-blue-500 rounded-full"
+              className="hidden md:block absolute -left-20 bg-white border-4 border-blue-500 rounded-full"
               style={{
                 width: 20,
                 height: 20,
@@ -115,71 +80,11 @@ const GrowthTimeline: React.FC = () => {
         </div>
 
         <div className="relative z-10 space-y-20">
-          <div className="timeline-item relative">
-            <div
-              ref={leftContainerRef}
-              className="transition-all duration-700 ease-out opacity-0 -translate-x-10"
-            >
-              <Left />
+          {timelineData.map((item, index) => (
+            <div key={index} className="timeline-item relative">
+              <TimelineItem {...item} />
             </div>
-          </div>
-
-          <div className="timeline-item relative">
-            <div className="w-full md:-translate-x-1/15">
-              <div className="grid md:grid-cols-2 gap-10 my-10 pt-30 pb-30">
-                <div className="space-y-5 border-l-2 border-gray-700/20 pl-5 relative">
-                  <h1 className="text-5xl font-extrabold md:text-8xl">
-                    2<span className="text-gray-300">0</span>21
-                  </h1>
-                  <p className="text-sm max-w-5/6 my-5 text-end md:text-lg text-gray-700/90 leading-tight">
-                    In 2021, we embraced innovation and expanded our capabilities,
-                    laying the foundation for our current success. It was a year
-                    of strategic partnerships and significant milestones.
-                  </p>
-                </div>
-                <div className="overflow-clip w-full h-auto group shadow-2xl rounded-xl">
-                  <Image
-                    src={p1}
-                    alt="vh"
-                    className="hover:scale-110 w-full h-auto transition-all duration-500"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="timeline-item relative">
-            <div
-              ref={rightContainerRef}
-              className="transition-all duration-700 ease-out opacity-0 translate-x-10"
-            >
-              <Right />
-            </div>
-          </div>
-
-          <div className="timeline-item relative">
-            <div className="w-full md:translate-x-1/15">
-              <div className="grid md:grid-cols-2 gap-10 my-10 pt-30 pb-30">
-                <div className="overflow-clip group shadow-2xl rounded-xl">
-                  <Image
-                    src={p1}
-                    alt="vh"
-                    className="hover:scale-110 w-full h-auto transition-all duration-500"
-                  />
-                </div>
-                <div className="space-y-5 border-r-2 border-gray-700/20 pl-5 relative">
-                  <h1 className="text-5xl font-extrabold md:text-8xl">
-                    2<span className="text-gray-300">0</span>24
-                  </h1>
-                  <p className="text-sm my-5 text-start max-w-5/6 md:text-lg text-gray-700/90 leading-tight">
-                    The year 2024 marks our transformation into a more agile and
-                    customer-centric organization. We’re focused on delivering
-                    excellence while nurturing our talented team.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
 
         <div ref={nowRef} />
@@ -190,4 +95,4 @@ const GrowthTimeline: React.FC = () => {
   );
 };
 
-export default GrowthTimeline;
+export default TimeLine;

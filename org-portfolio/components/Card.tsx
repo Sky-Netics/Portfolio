@@ -7,32 +7,35 @@ const Card = () => {
   const cards = [
     {
       id: 1,
-      title: "Powering the Future",
+      title: "Custom Web Solutions",
       description:
-        "Chevron's 2024 annual report highlights our continued commitment to building a resilient energy system.",
-      cta: "Download Report",
-      bgColor: "rgba(113,27,0,0.4)",
-    },
-    {
-      id: 2,
-      title: "Sustainable Solutions",
-      description: "Discover our innovative approaches to sustainable energy production.",
-      cta: "Learn More",
+        "We build beautiful, responsive, and high-performing websites tailored to your business needs.",
+      cta: "See Our Work",
       bgColor: "rgba(11,45,113,0.4)",
     },
     {
-      id: 3,
-      title: "Global Impact",
-      description: "See how we're making a difference in communities worldwide.",
-      cta: "Our Projects",
+      id: 2,
+      title: "E-commerce Platforms",
+      description:
+        "From small shops to large-scale marketplaces, we create powerful e-commerce solutions.",
+      cta: "Explore Services",
       bgColor: "rgba(0,102,178,0.4)",
     },
     {
-      id: 4,
-      title: "Innovation Drive",
-      description: "See how we're making a difference in communities worldwide.",
-      cta: "Our Projects",
+      id: 3,
+      title: "Mobile App Development",
+      description:
+        "Engage your users with intuitive and powerful mobile applications for iOS and Android.",
+      cta: "Learn More",
       bgColor: "rgba(5,110,145,0.5)",
+    },
+    {
+      id: 4,
+      title: "Ongoing Support",
+      description:
+        "We provide reliable maintenance and support to keep your digital products running smoothly.",
+      cta: "Get a Quote",
+      bgColor: "rgba(113,27,0,0.4)",
     },
   ]
 

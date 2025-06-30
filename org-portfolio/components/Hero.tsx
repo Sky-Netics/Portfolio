@@ -9,23 +9,23 @@ import Card from "./Card";
 const slides = [
   {
     src: "/images/slider/img1.jpg",
-    alt: "Modern Shopping Experience",
+    alt: "A modern and responsive website design for a client.",
   },
   {
     src: "/images/slider/img2.jpg",
-    alt: "Fresh Shopping Cart",
+    alt: "A developer writing clean code for a web application.",
   },
   {
     src: "/images/slider/img3.jpg",
-    alt: "Safe Shopping Experience 1",
+    alt: "A team collaborating on a new web project.",
   },
   {
     src: "/images/slider/img4.jpg",
-    alt: "Safe Shopping Experience 2",
+    alt: "A secure and reliable backend infrastructure.",
   },
   {
     src: "/images/slider/img5.jpg",
-    alt: "Safe Shopping Experience 3",
+    alt: "A user interacting with a new mobile application.",
   },
 ];
 

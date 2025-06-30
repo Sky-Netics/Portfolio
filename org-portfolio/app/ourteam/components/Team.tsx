@@ -1,15 +1,15 @@
 "use client";
 
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 import p from "../../../public/images/marquee-2.png";
 import p1 from "../../../public/images/marquee-3.png";
-import Link from "next/link";
 
 type TeamMember = {
   name: string;
   role: string;
-  imageSrc: any;
-  hoverImageSrc: any;
+  imageSrc: StaticImageData;
+  hoverImageSrc: StaticImageData;
   imageAlt: string;
 };
 
@@ -74,7 +74,7 @@ const teamMembers: TeamMember[] = [
 
 const TeamSection = () => {
   return (
-    <section className="relative  w-full bg-black text-white py-20 px-5">
+    <section className="relative w-full bg-black text-white py-20 px-5">
       <div className="max-w-7xl mx-auto py-5 space-y-20 text-center">
         {/* Title and description */}
         <div className="space-y-5 mt-5">
@@ -85,7 +85,7 @@ const TeamSection = () => {
             MAINTENANCE <br /> AND SUPPORT
           </h2>
           <p className="text-sm md:text-base pt-5 text-gray-400/80 max-w-3xl mx-auto">
-            Once the development is complete, we won’t leave our clients high
+            Once the development is complete, we won&apos;t leave our clients high
             and dry! Our engineers are here to help you get through any bumps on
             the road by bug fixing, guiding clients through the right path and
             supporting their requests, for as long as both parties have agreed
@@ -115,7 +115,7 @@ const TeamSection = () => {
                 {/* Hover Image */}
                 <Image
                   src={member.hoverImageSrc}
-                  alt={`${member.name} Hover`}
+                  alt={`${member.name} - professional portrait`}
                   fill
                   className="object-cover absolute top-0 left-0 opacity-10 group-hover:opacity-90 group-hover:scale-110 transition-all duration-900"
                 />
@@ -134,21 +134,21 @@ const TeamSection = () => {
             WE LIKE SHARING <br className="hidden md:block" /> THE GLORY
           </h2>
 
-          <Link href="/contactUs">
-            <button className="inline-flex h-12 hover:scale-105 transition-all duration-300 items-center justify-center rounded-xl border-2 border-slate-500 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%]  px-6 font-medium text-white  focus:outline-none focus:ring-2 focus:ring-slate-950 focus:ring-offset-2">
-              Submit Your Request
-            </button>
+          <Link
+            href="/contact"
+            className="inline-flex h-12 hover:scale-105 transition-all duration-300 items-center justify-center rounded-xl border-2 border-slate-500 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%]  px-6 font-medium text-white  focus:outline-none focus:ring-2 focus:ring-slate-950 focus:ring-offset-2"
+          >
+            Submit Your Request
           </Link>
 
           <p className="max-w-3xl text-gray-400/80 text-sm md:text-base font-medium">
             We are always looking for great problem-solvers with passion and
             knowledge. These are the types of people we want to team up with and
             thrive together as our new members. Feel free to send your resume,
-            we’ll get back to you as soon as possible.
+            we&apos;ll get back to you as soon as possible.
           </p>
         </div>
       </div>
-
       <div className="absolute -bottom-40 left-0 w-full h-40 bg-black"></div>
     </section>
   );
