@@ -3,45 +3,45 @@ import Image from "next/image";
 import pg from '../../../public/images/P_G.jpg';
 import React from "react";
 
-const EmployeeValueSection = () => {
+const EmployeeStories = () => {
   return (
-    <section className=" md:w-3/4 mx-auto px-4 py-10 space-y-15 text-left text-gray-700">
+    <section className=" md:w-3/5 mx-auto px-4 py-16 space-y-16 text-left text-gray-700">
       <div className="space-y-6 text-sm leading-tight mx-2">
         <p>
-          There is no single equation for success at P&amp;G, because no two
-          P&amp;G people or careers are alike. Just as we strive to deliver a
-          superior consumer experience, we aim to deliver a superior employee
-          value equation as well.
+          There&apos;s no single formula for innovation at our company, because no two
+          projects or developers are the same. Just as we are committed to delivering
+          a superior user experience in our products, we are dedicated to fostering
+          a superior employee experience for our team.
         </p>
 
-        <p >
-          We celebrate the uniqueness of each employee’s journey because we know
-          that loyalty and success stem from the times when people feel{" "}
-          <strong>inspired</strong> to make a difference, have equal opportunity
-          and multiple ways to continue <strong>growing</strong>, feel pride in{" "}
-          <strong>making an impact</strong> and know they’re being{" "}
-          <strong>valued and rewarded</strong> for their contributions to their
-          team’s and our company’s success.
+        <p>
+          We celebrate the uniqueness of each team member&apos;s journey because we
+          know that breakthrough solutions come from people who feel{" "}
+          <strong>inspired</strong> to solve complex challenges, have equal
+          opportunities and multiple paths to <strong>grow</strong> their skills,
+          feel pride in <strong>making an impact</strong> with code, and know
+          they&apos;re being <strong>valued and rewarded</strong> for their
+          contributions to our clients&apos; and our company&apos;s success.
         </p>
 
-        <p >
-          We believe when we support our employees’ wellbeing, they are better
-          able to contribute to the success of the Company and achieve their
-          personal goals. That is why{" "}
+        <p>
+          We believe that supporting our team&apos;s well-being is crucial for
+          creating amazing software. That&apos;s why our benefits package is
+          designed to support our developers in all aspects of their lives. See{" "}
           <Link
-            href=""
+            href="#"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-600 underline font-bold hover:text-blue-900 transition"
           >
-            P&amp;G’s Total Rewards package
+            Our Benefits & Perks
           </Link>{" "}
-          is focused on supporting four key wellbeing areas: financial, mental,
-          physical and work-life wellbeing.
+          to learn more about our commitment to financial, mental, physical, and
+          work-life balance.
         </p>
       </div>
 
-      <div className="relative w-full h-auto aspect-video max-w-4xl mx-auto group cursor-pointer overflow-clip rounded-3xl shadow-lg">
+      <a href="#" className="relative w-full h-auto aspect-video max-w-4xl mx-auto group cursor-pointer overflow-clip rounded-3xl shadow-lg block">
         <Image
           src={pg}
           alt="Employee Value Video Thumbnail"
@@ -49,9 +49,9 @@ const EmployeeValueSection = () => {
           height={720}
           className="w-full h-full brightness-80 opacity-95 hover:brightness-100 hover:object-cover rounded-3xl shadow-lg  transition-all duration-500 group-hover:scale-105"
         />
-      </div>
+      </a>
     </section>
   );
 };
 
-export default EmployeeValueSection;
+export default EmployeeStories;
