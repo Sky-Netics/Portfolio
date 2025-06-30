@@ -114,9 +114,9 @@ const EmployeeStoriesSlider = () => {
           ))}
         </Slider>
         <div className="text-center mt-12">
-          <p className="text-[#003da5] font-semibold text-md md:text-2xl mb-2">Like what you're hearing?</p>
+          <p className="text-[#003da5] font-semibold text-md md:text-2xl mb-2">Like what you&apos;re hearing?</p>
           <p className="text-gray-700/80 text-sm max-w-xl mx-auto mb-4">
-            If you share our values, you should join the P&G team. We're always looking for forward-thinkers.
+            If you share our values, you should join the P&G team. We&apos;re always looking for forward-thinkers.
           </p>
           <Link
             href="https://www.pgcareers.com/"
