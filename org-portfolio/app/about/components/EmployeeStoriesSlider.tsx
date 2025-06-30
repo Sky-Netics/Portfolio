@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { FaPlay } from 'react-icons/fa';
 import p1 from '../../../public/images/slider/about/slider/Andrade.jpg';
 import p2 from '../../../public/images/slider/about/slider/Morante.jpg';
 import p3 from '../../../public/images/slider/about/slider/Riva.jpg';
@@ -49,41 +50,33 @@ const videos = [
   },
 ];
 
-const CustomPrevArrow = (props: any) => {
-  const { onClick } = props;
-  return (
-    <button
-      onClick={onClick}
-      className="absolute  z-10 left-0 md:-left-6 top-1/2 transform -translate-y-1/2 bg-white p-2 md:p-4 rounded-full shadow-xl hover:bg-[#003da5] group transition"
-    >
-      <svg
-        className="w-4 h-4 md:w-8 md:h-8 text-[#003da5] group-hover:text-white"
-        fill="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
-      </svg>
-    </button>
-  );
-};
+interface ArrowProps {
+  onClick?: () => void;
+}
 
-const CustomNextArrow = (props: any) => {
-  const { onClick } = props;
-  return (
-    <button
-      onClick={onClick}
-      className="absolute  z-10 right-0 md:-right-6 top-1/2 transform -translate-y-1/2 bg-white p-2 md:p-4 rounded-full shadow-xl hover:bg-[#003da5] group transition"
-    >
-      <svg
-        className="w-4 h-4 md:w-8 md:h-8 text-[#003da5] group-hover:text-white"
-        fill="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
-      </svg>
-    </button>
-  );
-};
+const CustomPrevArrow: React.FC<ArrowProps> = ({ onClick }) => (
+  <button
+    onClick={onClick}
+    aria-label="Previous slide"
+    className="absolute z-10 left-0 md:-left-6 top-1/2 transform -translate-y-1/2 bg-white p-2 md:p-4 rounded-full shadow-xl hover:bg-[#003da5] group transition"
+  >
+    <svg className="w-4 h-4 md:w-8 md:h-8 text-[#003da5] group-hover:text-white" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+    </svg>
+  </button>
+);
+
+const CustomNextArrow: React.FC<ArrowProps> = ({ onClick }) => (
+  <button
+    onClick={onClick}
+    aria-label="Next slide"
+    className="absolute z-10 right-0 md:-right-6 top-1/2 transform -translate-y-1/2 bg-white p-2 md:p-4 rounded-full shadow-xl hover:bg-[#003da5] group transition"
+  >
+    <svg className="w-4 h-4 md:w-8 md:h-8 text-[#003da5] group-hover:text-white" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+    </svg>
+  </button>
+);
 
 const sliderSettings = {
   dots: true,
@@ -92,6 +85,7 @@ const sliderSettings = {
   slidesToShow: 1,
   slidesToScroll: 1,
   arrows: true,
+  lazyLoad: 'ondemand' as const,
   prevArrow: <CustomPrevArrow />,
   nextArrow: <CustomNextArrow />,
 };
@@ -99,11 +93,10 @@ const sliderSettings = {
 const EmployeeStoriesSlider = () => {
   return (
     <section className="bg-[#f2f7ff] py-20">
-      <div className=" md:max-w-4xl lg:max-w-5xl mx-auto px-4 relative">
+      <div className="md:max-w-4xl lg:max-w-5xl mx-auto px-4 relative">
         <h2 className="text-md text-center md:text-left md:text-2xl font-semibold text-[#003da5] mb-10">
           Hear from a few employees who have shared their story on why they work at P&G.
         </h2>
-
         <Slider {...sliderSettings}>
           {videos.map((video, index) => (
             <div key={index} className="px-6 py-6">
@@ -112,24 +105,16 @@ const EmployeeStoriesSlider = () => {
                 aria-label={video.alt}
                 className="block aspect-video relative overflow-clip brightness-90 opacity-90 group-hover:brightness-100 group-hover:opacity-100 hover:overflow-hidden rounded-3xl hover:rounded-3xl transition-all transform duration-500 hover:scale-102"
               >
-                <Image
-                  src={video.img}
-                  alt={video.alt}
-                  fill
-                  className="object-cover"
-                />
+                <Image src={video.img} alt={video.alt} fill className="object-cover" />
                 <div className="absolute inset-0 bg-[#003DA5]/30 flex items-center justify-center opacity-80 hover:opacity-20 transition">
-                  <svg className="w-24 h-24 mx-auto text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
+                  <FaPlay className="w-24 h-24 mx-auto text-white" />
                 </div>
               </Link>
             </div>
           ))}
         </Slider>
-
         <div className="text-center mt-12">
-          <p className="text-[#003da5] font-semibold text-md md:text-2xl mb-2">Like what you’re hearing?</p>
+          <p className="text-[#003da5] font-semibold text-md md:text-2xl mb-2">Like what you're hearing?</p>
           <p className="text-gray-700/80 text-sm max-w-xl mx-auto mb-4">
             If you share our values, you should join the P&G team. We're always looking for forward-thinkers.
           </p>
