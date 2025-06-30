@@ -1,14 +1,14 @@
 "use client";
 import Image from "next/image";
 import logoPng from "../../../public/images/logo-transparent-png2.png";
-
+import Link from "next/link";
 import { Button } from "./ui/button";
 import { RocketIcon, UserIcon } from "./ui/icones";
 
-export default function HeroSection() {
+export default function Hero() {
   return (
-    <section className="w-full  bg-gray-50 py-10 px-5 ">
-      <div className="max-w-5/6 mx-auto  text-center">
+    <section className="w-full bg-gray-50 py-10 px-5">
+      <div className="max-w-7xl mx-auto text-center">
         <div className="w-full mx-auto mb-5 max-w-xs md:max-w-sm lg:max-w-md">
           <Image
             src={logoPng}
@@ -29,15 +29,18 @@ export default function HeroSection() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-          <Button variant="primary">
-            <RocketIcon size={20} />
-            Start your free trial
-          </Button>
-
-          <Button variant="secondary">
-            <UserIcon size={20} />
-            Book a demo with Sofie
-          </Button>
+          <Link href="/free-trial">
+            <Button variant="primary">
+              <RocketIcon size={20} />
+              Start your free trial
+            </Button>
+          </Link>
+          <Link href="/contact">
+            <Button variant="secondary">
+              <UserIcon size={20} />
+              Book a demo with Sofie
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

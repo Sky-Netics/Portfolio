@@ -1,9 +1,9 @@
-import ContactSection from "./components/Contact-section";
-import HeroSection from "./components/Hero-section";
-import ContactFormSection from "./components/contact-form-section";
-import CurveDivider from "./components/ui/curve-divider";
+import ContactSection from "./components/ContactSection";
+import HeroSection from "./components/HeroSection";
+import ContactFormSection from "./components/ContactFormSection";
+import CurveDivider from "./components/ui/CurveDivider";
 
-export default function Home() {
+export default function ContactPage() {
   return (
     <main className="">
       <HeroSection />
