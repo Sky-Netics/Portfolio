@@ -6,8 +6,6 @@ import { useState } from "react";
 import Image from "next/image";
 import { Plus } from "lucide-react";
 import p1 from "../public/images/logo-transparence/Artificial-intelligence.png";
-import p2 from "../public/images/logo-transparence/Icon -dark-feather-plus-circle.png";
-import p3 from "../public/images/logo-transparence/Icon feather-plus-circle-white.png";
 import p4 from "../public/images/logo-transparence/Software for hardware .png";
 import p5 from "../public/images/logo-transparence/Software-design.png";
 import p6 from "../public/images/logo-transparence/Startup Consulting Services.png";
@@ -98,6 +96,7 @@ const FlipCard: React.FC<FlipCardProps> = ({ card, isFlipped, onFlip }) => {
             </div>
             <button
               onClick={onFlip}
+              aria-label="Flip card"
               className="2xl:w-[45px] 2xl:h-[45px] xl:w-[40px] xl:h-[40px] w-[30px] h-[30px] cursor-pointer hover:scale-120 transition-transform"
             >
               <Plus className={`w-full h-full ${iconColor}`} />
@@ -120,6 +119,7 @@ const FlipCard: React.FC<FlipCardProps> = ({ card, isFlipped, onFlip }) => {
           <div className="w-full h-fit flex flex-row justify-end">
             <button
               onClick={onFlip}
+              aria-label="Flip card"
               className="2xl:w-[45px] 2xl:h-[45px] xl:w-[40px] xl:h-[40px] w-[30px] h-[30px] cursor-pointer rotate-45 hover:scale-110 transition-transform"
             >
               <Plus className={`w-full h-full ${iconColor}`} />
@@ -152,33 +152,16 @@ export default function FlipCardsSection() {
   };
 
   return (
-    <div className="w-full mt-40 pt-20 2xl:h-[1000px] xl:h-[900px] lg:h-[800px] md:h-[700px] h-[1500px] flex flex-row justify-center items-center">
-      <div className="2xl:w-[900px] xl:w-[750px] lg:w-[700px] md:w-[600px] w-[80%] md:h-[85%] h-[90%] flex flex-col">
-        <div className="flex md:flex-row flex-col gap-8 w-full h-[50%]">
+    <div className="w-full mt-40 pt-20 2xl:h-[1000px] xl:h-[900px] lg:h-[800px] md:h-[700px] h-[1500px] flex justify-center items-center">
+      <div className="2xl:w-[900px] xl:w-[750px] lg:w-[700px] md:w-[600px] w-[80%] md:h-[85%] h-[90%] grid md:grid-cols-2 grid-cols-1 gap-8">
+        {cardsData.map((card) => (
           <FlipCard
-            card={cardsData[0]}
-            isFlipped={flippedCards.has(1)}
-            onFlip={() => handleCardFlip(1)}
+            key={card.id}
+            card={card}
+            isFlipped={flippedCards.has(card.id)}
+            onFlip={() => handleCardFlip(card.id)}
           />
-          <FlipCard
-            card={cardsData[1]}
-            isFlipped={flippedCards.has(2)}
-            onFlip={() => handleCardFlip(2)}
-          />
-        </div>
-
-        <div className="flex md:flex-row flex-col-reverse gap-8 mt-8 w-full h-[50%]">
-          <FlipCard
-            card={cardsData[2]}
-            isFlipped={flippedCards.has(3)}
-            onFlip={() => handleCardFlip(3)}
-          />
-          <FlipCard
-            card={cardsData[3]}
-            isFlipped={flippedCards.has(4)}
-            onFlip={() => handleCardFlip(4)}
-          />
-        </div>
+        ))}
       </div>
     </div>
   );
