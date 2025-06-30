@@ -2,7 +2,7 @@
 
 export default function DigitalSolutionsSection() {
   return (
-    <>
+    <div className="relative w-full min-h-60dvh">
       <div className="sticky top-0 z-20 flex items-center justify-center h-[700px] bg-gray-50/80 backdrop-blur-2xl">
         <h1 className="text-3xl md:text-6xl font-bold text-slate-800 text-center transition-all duration-300">
           Front-end
@@ -59,7 +59,7 @@ export default function DigitalSolutionsSection() {
                     <div className="text-xs text-gray-400 ml-4">app.tsx</div>
                   </div>
 
-                  <div className="p-4 font-mono text-xs space-y-1">
+                  <div className="p-2 font-mono text-xs space-y-1">
                     <div className="text-purple-400">
                       import <span className="text-blue-400">React</span> from{" "}
                       <span className="text-green-400">'react'</span>
@@ -109,7 +109,7 @@ export default function DigitalSolutionsSection() {
                   </div>
                 </div>
 
-                <div className="absolute top-4 right-4 flex space-x-2">
+                <div className="absolute top-0 right-0 md:top-4 md:right-4 flex space-x-2">
                   <div className="w-6 h-6 bg-blue-500 rounded flex items-center justify-center text-white text-xs font-bold">
                     R
                   </div>
@@ -136,6 +136,6 @@ export default function DigitalSolutionsSection() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

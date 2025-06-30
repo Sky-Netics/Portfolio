@@ -5,8 +5,8 @@
 
 export default function BackendSolutionsSection() {
   return (
-    <>
-      <div className="sticky top-0 z-10 flex items-center justify-center h-[700px] bg-gray-50/80 backdrop-blur-2xl">
+    <div className="relative w-full min-h-60dvh ">
+      <div className="sticky top-0 z-10 flex items-center justify-center h-[700px] bg-gray-50/80 backdrop-blur-2xl overflow-hidden">
         <h1 className="text-3xl md:text-6xl font-bold text-slate-800 text-center transition-all duration-300">
           Back-end
         </h1>
@@ -126,6 +126,6 @@ export default function BackendSolutionsSection() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
