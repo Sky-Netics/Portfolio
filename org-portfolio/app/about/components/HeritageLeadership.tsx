@@ -60,10 +60,11 @@ const InfoSection: React.FC<InfoSectionProps> = ({
     <div className="max-w-md text-center md:text-left">
       <h3 className="text-xl font-bold text-blue-700">{title}</h3>
       <p className="text-gray-600 mt-2">{description}</p>
-      <Link href={linkHref}>
-        <Link className="mt-10 inline-block border border-blue-600 text-blue-600 px-4 py-2 hover:bg-blue-500 hover:text-white rounded-full transition-all duration-300" href={""}>
-          {linkText}
-        </Link>
+      <Link
+        href={linkHref}
+        className="mt-10 inline-block border border-blue-600 text-blue-600 px-4 py-2 hover:bg-blue-500 hover:text-white rounded-full transition-all duration-300"
+      >
+        {linkText}
       </Link>
     </div>
   </div>
